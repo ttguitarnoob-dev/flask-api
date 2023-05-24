@@ -20,13 +20,18 @@ class Items(Resource):
     
     def post(self):
         data = request.json
-        itemId = len(fakedb.key()) + 1
+        itemId = len(fakedb.keys()) + 1
         fakedb[itemId] = {'name' :data['name']}
         return fakedb
 
 class Item(Resource):
     def get(self, pk):
         return fakedb[pk]
+    
+    def put(self, pk):
+        data = request.json
+        fakedb[pk]['poo'] = data['poo']
+        return fakedb
     
 api.add_resource(Items, '/')
 api.add_resource(Item, '/<int:pk>')

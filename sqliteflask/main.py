@@ -12,6 +12,7 @@ stink_level = [
     ("macaroni", 12, 24, 99),
     ("cheese", 12, 24, 99),
     ("cheeseburger", 12, 24, 99),
+    ("baby food", 12, 24, 99),
 ]
 
 cursor.executemany("insert into smellbutt values (?,?,?,?)", stink_level)
